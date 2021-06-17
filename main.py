@@ -69,7 +69,8 @@ def refill_resources(resources):
 
 
 def make_coffee(coffee_type):
-    print(f"Here is your {coffee_type}")
+    """ Function takes coffee type from users_answer, then asks for pay and serves you a coffee """
+    print(f"Here is your {coffee_type}! Enjoy! \n")
 
 
 def main():
@@ -84,12 +85,8 @@ def main():
         print_menu(MENU, coffee_types)
         users_choice = input()
         print()
-        if users_choice == '1':
-            print("Espresso")
-        elif users_choice == '2':
-            print("Latte")
-        elif users_choice == '3':
-            print("Cappucino")
+        if users_choice in str(coffee_types.keys()):
+            make_coffee(coffee_types[int(users_choice)])
         # print report of resources
         elif users_choice == 'report': 
             print_resources(resources)
